@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.input-box {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 5px;
+}
+
+.valid-list li {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 10px;
+  color: gray;
+}
+
+.valid-list li:before {
+  content: "\f06a";
+  margin-right: 10px;
+}
