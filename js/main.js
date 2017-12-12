@@ -22,8 +22,8 @@ AppModal.prototype.on = function(event, func) {
 
 // イベント発火
 AppModal.prototype.trigger = function(event) {
-  $.each(this.listeners[event], function() {
-    this();
+  this.listeners[event].forEach(function(target) {
+    target();
   });
 }
 
@@ -112,6 +112,7 @@ AppView.prototype.onKeyup = function(e) {
 // 有効
 AppView.prototype.onValid = function() {
   this.$el.removeClass('error');
+  this.$el.addClass('clear');
   this.$list.hide();
 }
 
@@ -119,6 +120,7 @@ AppView.prototype.onValid = function() {
 AppView.prototype.onInValid = function() {
   var self = this;
   this.$el.addClass('error');
+  this.$el.removeClass('clear');
   this.$list.hide();
 
   $.each(this.modal.errors, function(index, val) {
@@ -130,6 +132,9 @@ AppView.prototype.onInValid = function() {
 /**
  * メイン
  */
-$('input').each(function() {
-  new AppView(this);
+window.addEventListener('load', function() {
+  var elInput = document.querySelectorAll('input');
+  [].slice.call(elInput, 0).forEach(function(e) {
+    new AppView(e);
+  });
 });

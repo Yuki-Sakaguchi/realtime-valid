@@ -36,3 +36,15 @@ ul {
   content: "\f06a";
   margin-right: 10px;
 }
+
+.error {
+  color: red;
+  border: 1px solid red;
+  background: #f7a2b926;
+}
+
+.clear {
+  color: green;
+  border: 1px solid green;
+  background: #0080001f;
+}
